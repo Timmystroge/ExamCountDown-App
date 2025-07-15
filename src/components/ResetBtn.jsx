@@ -14,7 +14,8 @@ const ResetBtn = ({ handleReset }) => {
                 </button>
             </div>
 
-            <div className="mt-[5rem] mb-2 text-center">
+            {/* Fixed footer at bottom of screen */}
+            <div className="fixed bottom-0 left-0 right-0 py-4 text-center bg-gradient-to-t from-slate-900/80 to-transparent backdrop-blur-sm">
                 <p className="text-slate-500 text-[.8rem]">Built with ❤️ by TimmyStroge</p>
             </div>
         </>
