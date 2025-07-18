@@ -1,6 +1,7 @@
 // Importing functions needed from SDKs
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"; // Import Firestore service
+import { getAuth, signInAnonymously } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,8 +15,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-// Initialize Firestore and get a reference to the service
 const db = getFirestore(app);
-export { db }; // Export the Firestore database instance
+const auth = getAuth(app)
+export { db, auth, signInAnonymously }; // Export the Firestore database instance
