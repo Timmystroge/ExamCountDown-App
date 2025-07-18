@@ -229,8 +229,8 @@ export default function ExamCountdown() {
     } catch (e) {
       console.error("Error loading document from Firestore: ", e);
       setAppState("initial");
-      setCurrentMotivation("Error loading previous countdown. Please try again.");
-      setCurrentStudyTip("Error loading previous countdown. Please try again.");
+      setCurrentMotivation("");
+      setCurrentStudyTip("");
     }
   }, [appState, generateLlmContent, deleteTargetDate]);
 
