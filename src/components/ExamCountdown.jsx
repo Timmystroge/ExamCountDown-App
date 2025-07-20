@@ -211,14 +211,14 @@ export default function ExamCountdown() {
           generateLlmContent(remaining.days, isExamDayInProgress);
         } else {
           //if date is in the past, transition to finished state
-          setAppState("finished");
+          setAppState("finished"); // display the finished state to the user
           setCurrentMotivation(
             "🎉 Congratulations! Your exam day has arrived. You've prepared well - now go show what you know!"
           );
           setCurrentStudyTip("Take a deep breath, trust your knowledge and trust in God. You've got this!");
           setIsLoadingMessage(false);
           // Delete after a small delay to allow UI to update
-          setTimeout(() => deleteTargetDate(uid), 1000); // Pass UID to delete
+          setTimeout(() => deleteTargetDate(uid), 1000); 
         }
       } else {
         // if there is no saved data for this user
@@ -294,7 +294,7 @@ export default function ExamCountdown() {
 
     const target = new Date();
     target.setDate(target.getDate() + days);
-    target.setHours(7, 0, 0, 0); // Set to 7 AM
+    target.setHours(7, 0, 0, 0); // Set to 7 AM on the day of exam
 
     await saveTargetDate(target, user.uid); // Pass UID to save
     setTargetDate(target);
